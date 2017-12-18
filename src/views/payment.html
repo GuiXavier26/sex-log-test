@@ -1,0 +1,160 @@
+<md-divider></md-divider>
+
+<md-grid-list md-cols-xs="1" md-cols="2" md-row-height="10:1" hide-xs hide-sm >
+        <md-grid-tile class="disable-font" >Escolha o plano ideal para você</md-grid-tile>
+        <md-grid-tile class="primary-font-color">Escolha a forma de pagamento</md-grid-tile>
+
+      </md-grid-list>
+
+      <md-divider></md-divider>
+         
+      <div class="md-padding">
+         
+
+                
+            <md-grid-list 
+            md-cols-xs="1" md-cols-sm="1" md-cols="2" md-cols-md="2" md-cols-gt-md="2"
+            md-row-height-gt-md="7:1" md-row-height="8:1" md-gutter="8px" md-gutter-gt-sm="10px">
+    
+
+
+            <md-grid-tile   md-rowspan="1" md-colspan-sm="1" md-colspan="2" md-colspan-xs="1"  hide-xs hide-sm>
+
+
+                <md-input-container  flex="80" class="md-block">
+                    <label><b>Plano escolhido:  </b>{{data.plan.total}}</label>
+                    <input disabled>
+                    </md-input-container>
+
+              
+              </md-grid-tile>        
+
+
+
+              <md-grid-tile md-rowspan="1" md-colspan="1" >
+                  <md-input-container  flex="60" >
+                      <label>Número do Cartão</label>
+                      <md-icon md-svg-src="assets/images/icon-credit-card.svg"></md-icon>
+                      <input required name="cardNumber" mask="9999-9999-9999-9999"  ng-model="data.cardNumber" />
+                      <div ng-messages="form.cardNumber.$error" role="alert" multiple>
+                        <div ng-message="required" class="my-message">Número do cartão é obrigatório.</div>
+                      </div>
+                    </md-input-container>
+
+                              </md-grid-tile  >
+
+                                 <md-grid-tile  >
+
+                                    <md-input-container flex="30">
+                                        <label>Mês</label>
+                                        <input required name="cardMonth"  ng-pattern="/^([1-9]|1[0-2])$/" type="number"  mask="22" ng-model="data.cardMonth"  placeholder="Ex: 12"/>
+                                      <div ng-messages="form.cardMonth.$error" role="alert" multiple>
+                                          <div ng-message="required" class="my-message">Mês é obrigatório.</div>
+                                          <div ng-message="pattern" class="my-message">Por favor, insira um mês válido.
+                                            </div>
+                                        </div>  
+      
+                                      </md-input-container>
+      
+                                      <md-input-container flex="30">
+                                          <label>Ano</label>
+                                          <input required name="cardYear" ng-pattern="/^(201[6-9]|20[2-5][0-9]|2060)$/" type="number"  mask="9999" ng-model="data.cardYear" placeholder="Ex: 2020" />
+                                          <div ng-messages="form.cardYear.$error" role="alert" multiple>
+                                            <div ng-message="required" class="my-message">Ano é obrigatório.</div>
+                                            <div ng-message="pattern" class="my-message">Data inválida.</div>
+                                          </div>
+                                        </md-input-container>
+      
+                  
+
+                                  </md-grid-tile>
+
+
+
+                                  <md-grid-tile >
+                                      
+
+                                      <md-input-container flex="60" >
+                                          <label>Nome do Titular</label>
+                                          <input ng-model="data.name" type="text" ng-pattern="/^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕçÇ\s]+$/" required name="name">
+                                          <div ng-messages="form.name.$error">
+                                              <div ng-message="required">Nome é obrigatório.</div>
+                                              <div ng-message="pattern">Por favor, insira apenas letras.</div>
+                                               </div>
+                                        </md-input-container>
+    
+                                   
+                            
+
+                                    </md-grid-tile>
+
+                      
+                      
+                      
+                                    <md-grid-tile md-rowspan="1" md-colspan="1" >
+                                      
+                                        <md-input-container flex="50"  >
+                                            <label >Código de Segurança</label>
+                                            <input ng-model="data.securtiyCode" ng-pattern="/^([1-8][0-9]{2}|9[0-8][0-9]|99[0-9])$/" placeholder="Ex: 000" name="securityCode" required mask="999" type="number" >
+                                          <div ng-messages="form.securityCode.$error">
+                                            <div ng-message="required">Código de segurança obrigatório.</div>
+                                            <div ng-message="pattern">Código deve conter 3 digitos.</div>
+                                          </div>
+                                        </md-input-container>
+                                        
+                                        <md-button class="md-icon-button" flex="10"    aria-label="Hint">
+                                          <md-tooltip md-direction="right">Código de 3 dígitos localizado atrás do cartão.</md-tooltip>
+                                          <md-icon 
+                                          md-svg-src="assets/images/ic_priority_high_black_24px.svg">
+                                        </md-icon>
+                                      </md-button>
+    
+
+                                      </md-grid-tile>
+                  
+                              
+
+                                  <md-grid-tile md-rowspan="1" md-colspan-sm="1" md-colspan="2" md-colspan-xs="1">
+                                      
+                                          <md-card class="alert-box" flex-xs="100"  flex="80">
+                                              <md-card-title class="md-padding">
+                                                <md-card-title-text>
+                                                  <span class="md-subhead" layout="row" layout-align="center">
+                                                    Para sua privacidade, a cobrança será feita em nome de "assinet-pgto-sl".
+                                                  </span>
+                                                </md-card-title-text>
+                                               
+                                              </md-card-title>
+                                             
+                                            </md-card>
+      
+                               
+                                      </md-grid-tile>
+                                                      
+                                  
+                                  
+                                  
+                        </md-grid-list>
+                        
+                                  
+                               
+ 
+                  <md-divider></md-divider hide-xs hide-sm >
+
+                  
+                  <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols="2" md-row-height="8:1" class="md-padding" >
+                        <md-grid-tile hide-xs hide-sm>
+                      <div flex="50">
+                            <img src="assets\images\icon-secure.png" >
+                      </div>
+                    </md-grid-tile>
+                    <md-grid-tile >
+                      <div layout-fill>
+                        <md-button layout-fill class="secondary-color" ng-disabled="form.$invalid" ng-click="finishPlan(data)">Concluir minha assinatura</md-button>
+                      </div>
+                    </md-grid-tile>
+                  </md-grid-list>
+                
+             
+            
+      

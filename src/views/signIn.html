@@ -1,0 +1,40 @@
+
+
+ 
+<md-dialog flex="auto" md-whiteframe>
+    <form name="form">
+
+
+    
+                <md-toolbar md-theme="white" >
+                <div class="md-toolbar-tools title">
+                    <h2  flex="100" >Assine Sex Log Vip</h2>          
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <md-icon md-svg-src="assets/images/ic_clear_black_24px.svg" aria-label="Close dialog"></md-icon>
+                    </md-button>
+                    </md-button>
+                </div>
+                </md-toolbar>
+
+      <md-content layout-fill >
+
+        <div ng-show="!success">
+          <div layout-fill ng-include="'views/plans.html'" ng-show="!next" ></div>
+          <div layout-fill ng-include="'views/payment.html'" ng-show="next" ></div>
+        </div>
+    
+        <div ng-show="success">
+            <div layout-fill ng-include="'views/success.html'"  ></div>
+        </div>
+
+        
+        
+          
+      </md-content>
+
+    </form>
+    
+            </md-dialog>
+ 
+ 

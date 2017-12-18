@@ -1,0 +1,27 @@
+{
+  "name": "front-test",
+  "version": "1.0.0",
+  "description": "Projeto front-end sexlog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sexlog/front-test.git"
+  },
+  "author": "Guilherme Caçador Xavier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sexlog/front-test/issues"
+  },
+  "homepage": "https://github.com/sexlog/front-test#readme",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-animate": "^1.6.7",
+    "angular-aria": "^1.6.7",
+    "angular-credit-cards": "^3.1.6",
+    "angular-material": "^1.1.5",
+    "angular-messages": "^1.6.7"
+  }
+}

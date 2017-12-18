@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "fontNegrito";
+    src: url("./FaktSoftPro-Normal.woff") format('woff');
+}
+
+@font-face {
+    font-family: "fontPadrao";
+    src: url("./FaktSoftPro-Blond.woff") format('woff');
+}
+
+
+body {
+    font-family: 'fontNegrito';
+    background-color: #F5F5F5;
+  }
+
+ 
+  .disable-font{  
+    color: #A4A4A4;
+    text-align: center;
+    background-color: #E9E9E9;
+}
+
+
+.primary-color{
+    background-color: #661577;
+    
+}
+
+.font-white{
+    color: #FAFAFA;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-color-radio{
+    background-color: #661577;
+    color:#FAFAFA;
+    font-weight: 800;
+}
+
+.pink-font-color{
+    color: #E278AA;
+}
+
+.primary-font-color{
+    color:#661577;
+    text-transform: none;
+    background-color: #FFFFFF 
+}
+
+.primary-font-color-bold{
+    color:#661577;
+    text-transform: none;
+    font-weight: bold;
+}
+
+.secondary-font-color{
+    color:#49CBA4;
+    text-transform: none;
+}
+
+.title{
+    color:#661577;
+    text-align: center;
+    font-weight: bold;
+}
+
+.title2{
+    color:#661577;
+    text-align: center;
+    font-weight: 200;
+}
+
+
+
+.primary-color-hover{
+    background-color: #F3D8F8;
+}
+
+.secondary-color{
+    color:#FAFAFA;
+    background-color: #49CBA4;
+    font-weight: 800;
+    text-transform: none;
+    border-color: rgb(0, 0, 0);    
+}
+
+.alert-box{
+    border-width: 2px;
+    background-color: #FCF7DE;
+    color: #B98B3E; 
+}
+
+.font-success-bold{
+    color:#666666;
+    font-weight: bold
+}
+
+.font-success{
+    color:#666666;
+}

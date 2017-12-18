@@ -1,0 +1,97 @@
+<md-divider></md-divider>
+
+
+                <!-- TOPO -->
+<md-grid-list md-cols-xs="1" md-cols="2" md-row-height="10:1" hide-xs hide-sm >
+        <md-grid-tile class="primary-font-color">Escolha o plano ideal para você</md-grid-tile>
+        <md-grid-tile class="disable-font">Escolha a forma de pagamento</md-grid-tile>
+
+      </md-grid-list>
+
+ <md-divider></md-divider>
+
+
+        <div class="md-padding">
+    <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols="2"  md-row-height="7:4">
+
+
+                        <!-- VISUALIZAÇÃO DE PACOTES -->
+            <md-grid-tile   >
+                           
+            <md-list >
+
+
+                        <div  class="md-padding margin" layout="row" layout-align="center center"  >
+                        <span class="md-display-4 title">{{data.plan.price.integer}}</span>
+                        <div layout="column" >
+                                <span class="md-display-1 title">{{data.plan.price.decimal}}</span>
+                                <span class="md-subhead pink-font-color">{{data.plan.price.periodicy}}</span>
+                            </div>
+                        </div>
+
+
+                        <md-divider ng-show="data"></md-divider>
+
+                    <md-list-item >
+                            <div  layout="column" layout-align="center" class="md-padding">
+                                <div  ng-repeat="payment in data.plan.payments" class="md-caption">
+                                      
+
+                                  <md-icon ng-if="$index == 0" md-svg-src="assets/images/icon-credit-card.svg"></md-icon> 
+                                  <md-icon ng-if="$index == 1" md-svg-src="assets/images/icon-debit.svg"> </md-icon> 
+                                  <md-icon ng-if="$index == 2" md-svg-src="assets/images/icon-boleto.svg"> </md-icon>  
+                                  <span ng-bind-html="trustHtml(payment)"></span> 
+                                </div>
+                            </div>  
+                    </md-list-item>
+                    </md-list>
+                                 
+           
+                                           
+
+            </md-grid-tile>
+
+         
+
+                        <!-- SELECIONAR PACOTES MENSAIS -->
+            <md-grid-tile >
+                <div layout="column" layout-fill >
+                  <md-radio-group layout-fill ng-model="data.plan" ng-if="plans" ng-init="data.plan = plans[0]">
+                  <md-card ng-repeat="plan in plans"  layout="row" class="md-padding" flex  >
+                   
+                    <label layout="row"  layout-fill >
+                      <div flex="30" layout="column" layout-align="start center">
+                        <md-radio-button  class="primary-font-color-bold md-subhead"   ng-value="plan"   >{{plan.name}}</md-radio-button>                          
+                      </div>
+                      <div flex="70"  layout="row" layout-align="end center">
+                        <span  class="secondary-font-color"> {{plan.discount}}</span>
+                      </div>
+                    </label>
+                  </md-card>
+                </md-radio-group>
+                </div>
+            </md-grid-tile>
+
+
+          </md-grid-list>
+
+          <md-divider  hide-xs hide-sm></md-divider>
+
+
+                    <!-- FOOTER -->
+      <md-grid-list md-cols-xs="1" md-cols-sm="1" md-cols="2" md-row-height="8:1"   class="md-padding" >
+              <md-grid-tile hide-xs hide-sm>
+            <div flex="50">
+                  <img src="assets\images\icon-secure.png" >
+            </div>
+          </md-grid-tile>
+          <md-grid-tile  >
+            <div layout-fill>
+              <md-button layout-fill class="secondary-color md-display-3" ng-click="nextPage()">Próximo passo: Pagamento</md-button>
+            </div>
+          </md-grid-tile>
+        </md-grid-list>
+
+
+        
+        </div>
